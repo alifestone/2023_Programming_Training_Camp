@@ -1,18 +1,34 @@
-let old: game.LedSprite = null
-let block: game.LedSprite = null
-let _this = 0
+let 仙人掌2: game.LedSprite = null
+let 仙人掌: game.LedSprite = null
 basic.clearScreen()
-game.setScore(0)
+let block = game.createSprite(1, 4)
 basic.forever(function () {
-    _this = 0
-    block = game.createSprite(randint(0, 4), 0)
-    old = game.createSprite(6, 6)
-    while (block.get(LedSpriteProperty.Y) < 4) {
+    仙人掌 = game.createSprite(4, 4)
+    仙人掌2 = game.createSprite(4, 3)
+    for (let index = 0; index < 5; index++) {
         basic.pause(500)
-        block.change(LedSpriteProperty.Y, 1)
-        if (block.isTouching(old)) {
+        仙人掌.change(LedSpriteProperty.X, -1)
+        仙人掌2.change(LedSpriteProperty.X, -1)
+        if (仙人掌.isTouching(block) || 仙人掌2.isTouching(block)) {
             game.gameOver()
         }
     }
-    old = game.createSprite(block.get(LedSpriteProperty.X), block.get(LedSpriteProperty.Y))
+    仙人掌.delete()
+    仙人掌2.delete()
+    basic.pause(randint(500, 1500))
+})
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.B)) {
+        block.change(LedSpriteProperty.Y, -1)
+        basic.pause(50)
+        block.change(LedSpriteProperty.Y, -1)
+        basic.pause(50)
+        block.change(LedSpriteProperty.Y, -1)
+        basic.pause(400)
+        block.change(LedSpriteProperty.Y, 1)
+        basic.pause(50)
+        block.change(LedSpriteProperty.Y, 1)
+        basic.pause(50)
+        block.change(LedSpriteProperty.Y, 1)
+    }
 })
