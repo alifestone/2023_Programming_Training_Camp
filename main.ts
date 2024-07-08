@@ -1,15 +1,15 @@
 input.onButtonPressed(Button.A, function () {
-    block.change(LedSpriteProperty.Y, -1)
-    basic.pause(50)
-    block.change(LedSpriteProperty.Y, -1)
-    basic.pause(50)
-    block.change(LedSpriteProperty.Y, -1)
-    basic.pause(400)
-    block.change(LedSpriteProperty.Y, 1)
-    basic.pause(50)
-    block.change(LedSpriteProperty.Y, 1)
-    basic.pause(50)
-    block.change(LedSpriteProperty.Y, 1)
+    速度 = -2
+    while (速度 < 0) {
+        block.change(LedSpriteProperty.Y, 速度)
+        速度 += 1
+        basic.pause(130)
+    }
+    while (block.get(LedSpriteProperty.Y) < 4) {
+        block.change(LedSpriteProperty.Y, 速度)
+        速度 += 1
+        basic.pause(130)
+    }
 })
 input.onButtonPressed(Button.B, function () {
     while (true) {
@@ -30,11 +30,7 @@ input.onButtonPressed(Button.B, function () {
 })
 let 仙人掌2: game.LedSprite = null
 let 仙人掌: game.LedSprite = null
+let 速度 = 0
 let block: game.LedSprite = null
 basic.clearScreen()
 block = game.createSprite(1, 4)
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.B)) {
-    	
-    }
-})
