@@ -1,6 +1,6 @@
-#Introduction
-該專案為 113 年彰化區暑假國中程式設計訓練營。
-專案內容為利用 microbit 實現小恐龍遊戲
+# Introduction
+該專案為 113 年彰化區暑假國中程式設計訓練營。<br>
+專案內容為利用 microbit 實現小恐龍遊戲。
 
 > 在 [https://alifestone.github.io/kevin/](https://alifestone.github.io/kevin/) 打開此頁面
 
